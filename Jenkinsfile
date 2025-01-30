@@ -20,7 +20,7 @@ pipeline {
                 script {
                     // Run the Spring Boot application
                     echo 'Running the Spring Boot application'
-                    cmd "/c mvn spring-boot:run"
+                    bat "mvn spring-boot:run"
                 }
             }
         }
