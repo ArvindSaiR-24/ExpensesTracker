@@ -14,22 +14,13 @@ pipeline {
             }
         }
 
-        stage('Build and Package') {
-            steps {
-                script {
-                    // Build and package the Spring Boot application
-                    echo 'Building and packaging the application'
-                    sh "'${MAVEN_HOME}/bin/mvn' clean package"
-                }
-            }
-        }
 
-        stage('Run') {
+        stage('Build and Run') {
             steps {
                 script {
                     // Run the Spring Boot application
                     echo 'Running the Spring Boot application'
-                    sh "java -jar target/*.jar"
+                    sh "mvn spring-boot:run"
                 }
             }
         }
